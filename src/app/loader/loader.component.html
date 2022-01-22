@@ -1,0 +1,17 @@
+<ng-container *ngIf="standalone">
+  <div class="loader {{class}}" [ngStyle]="{'background-color': background}">
+    <div class="bounce1" [ngStyle]="{'background-color': color}"></div>
+    <div class="bounce2" [ngStyle]="{'background-color': color}"></div>
+    <div class="bounce3" [ngStyle]="{'background-color': color}"></div>
+  </div>
+</ng-container>
+
+
+<ng-container *ngIf="(isLoading | async)  && !standalone">
+  <div class="loader {{class}}" [ngStyle]="{'background-color': background}" [class.full]="fullPage">
+    <p [ngStyle]="{'color': color}">{{text}}</p>
+    <div class="bounce1" [ngStyle]="{'background-color': color}"></div>
+    <div class="bounce2" [ngStyle]="{'background-color': color}"></div>
+    <div class="bounce3" [ngStyle]="{'background-color': color}"></div>
+  </div>
+</ng-container>
